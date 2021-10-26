@@ -53,11 +53,11 @@
                     <div class="header-search">
                         <form action="/category/search" method="post">
 
-                            <select class="input-select" name="categories" th:each="catt : ${cat}">
+                            <select class="input-select" name="categories">
                                 <option value="all">All Categories</option>
 
 
-                                <option th:value="${catt.name}" th:text="${catt.name}"></option>
+                                <option  th:each="catt : ${cat}" th:value="${catt.name}" th:text="${catt.name}"></option>
 
                             </select>
                             <input class="input" type="search" name="search_text" placeholder="Search Names" id="searchbo">
@@ -112,12 +112,12 @@
         <!-- responsive-nav -->
         <div id="responsive-nav">
             <!-- NAV -->
-            <ul class="main-nav nav navbar-nav"   th:each="catt : ${cat}">
+            <ul class="main-nav nav navbar-nav"  >
                 <li class="active"><a href="/">Home</a></li>
 
 
 
-                <li><a  th:href="@{/category/searchbycat/__${catt.id}__}" th:text="${catt.name}"></a></li>
+                <li  th:each="catt : ${cat}"><a  th:href="@{/category/searchbycat/__${catt.id}__}" th:text="${catt.name}"></a></li>
 
 
             </ul>
@@ -181,7 +181,7 @@
 
                                     </div>
                                     <div class="add-to-cart">
-                                        <button class="add-to-cart-btn" onclick="postRecord('{!! $post['id'] !!}')"><i class="fa fa-shopping-cart" ></i> add to cart</button>
+                                        <button class="add-to-cart-btn" th:onclick="'postRecord('+${product.id}+')'"  ><i class="fa fa-shopping-cart" ></i> add to cart</button>
                                     </div>
                                 </div>
                                 <!-- /product -->
@@ -379,5 +379,6 @@
 <script th:src="@{/js/nouislider.min.js}"></script>
 <script th:src="@{/js/jquery.zoom.min.js}"></script>
 <script th:src="@{/js/main.js}" ></script>
+<script th:src="@{/js/shop.js}" ></script>
 
 </html>
