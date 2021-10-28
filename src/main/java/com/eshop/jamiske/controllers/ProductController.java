@@ -4,19 +4,22 @@ package com.eshop.jamiske.controllers;
 import com.eshop.jamiske.model.Products;
 import com.eshop.jamiske.repositories.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import javax.servlet.http.HttpServletRequest;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-
+import com.eshop.jamiske.services.ProductService;
 @RestController
 
 public class ProductController {
     @Autowired
     private ProductRepository productRepository;
+    @Autowired
+    ProductService productService;
     @RequestMapping(value = "/search", method = RequestMethod.POST)
-
     public @ResponseBody
     Iterable<Products> search (@RequestParam String categories
             , @RequestParam String search_text) {
@@ -129,5 +132,8 @@ int count = 0;
         request.getSession().setAttribute("NOTES_SESSION", notes);
         return notes ;
     }
-
+    @RequestMapping(value = "/products")
+    public ResponseEntity<Object> getProduct() {
+        return new ResponseEntity<>(productService.getProducts(), HttpStatus.OK);
+    }
 }
