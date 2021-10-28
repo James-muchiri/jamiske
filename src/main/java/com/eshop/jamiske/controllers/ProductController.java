@@ -4,20 +4,19 @@ package com.eshop.jamiske.controllers;
 import com.eshop.jamiske.model.Products;
 import com.eshop.jamiske.repositories.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
-@Controller
+@RestController
 
 public class ProductController {
     @Autowired
     private ProductRepository productRepository;
+    @RequestMapping(value = "/search", method = RequestMethod.POST)
 
-    @PostMapping(path="/search") // Map ONLY POST Requests
     public @ResponseBody
     Iterable<Products> search (@RequestParam String categories
             , @RequestParam String search_text) {
@@ -40,23 +39,95 @@ public class ProductController {
 
     @GetMapping(path = "/addToCart/{id}")
     public @ResponseBody
-    List<Products> getUp(@PathVariable final Integer id, HttpServletRequest request) {
+    List<Integer> getUp(@PathVariable final Integer id, HttpServletRequest request) {
         // This returns a JSON or XML with the users
-        List<Products> productbyid= (List<Products>) productRepository.findById(id);
 
-        //get the notes from request session
-        List<Integer> carts = (List<Integer>) request.getSession().getAttribute("NOTES_SESSION");
+
+
+        List <Integer> carts = (List<Integer>) request.getSession().getAttribute("cart");
         //check if notes is present in session or not
         if (carts == null) {
             carts = new ArrayList<>();
             // if notes object is not present in session, set notes in the request session
-            request.getSession().setAttribute("NOTES_SESSION", carts
-            );
+            request.getSession().setAttribute("cart", carts);
         }
-        carts.add(id);
-        request.getSession().setAttribute("NOTES_SESSION", carts.toArray());
-        return  productbyid;
+        else {
+            if (carts.contains(id))
+            {
 
+
+            }
+            else {
+
+                carts.add(id);
+                request.getSession().setAttribute("cart", carts);
+
+
+            }
+
+        }
+        return carts;
+    }
+
+    @GetMapping(path = "/addToCart==/{id}")
+    public @ResponseBody
+    List<Products> getUpp(@PathVariable final Integer id, HttpServletRequest request) {
+        // This returns a JSON or XML with the users
+
+
+
+        List <Products> carts = (List<Products>) request.getSession().getAttribute("cartss");
+        Products productsList= (Products) productRepository.findById(id);
+
+       carts.add(productsList);
+
+        return carts;
+    }
+
+
+    @GetMapping(path="/getCart")
+    public @ResponseBody
+    Integer getcart(HttpServletRequest request) {
+      //  List<Integer> carts = (List<Integer>)
+       // Integer count = 0;
+        List <Integer> carts = (List<Integer>) request.getSession().getAttribute("cart");
+     int  count = carts.size();
+
+        return count;
+    }
+    @GetMapping(path="/fetchCart")
+    public @ResponseBody
+    List<Products> fetchcart(HttpServletRequest request) {
+
+int count = 0;
+        List <Integer> carts = (List<Integer>) request.getSession().getAttribute("cart");
+        List<Products> temp = new ArrayList<>(Arrays.asList());
+        for (Integer cart : carts) {
+     count++;
+            Products productsList= (Products) productRepository.findById(cart);
+
+            temp.add(productsList);
+        }
+
+
+
+
+
+        return  temp;
+    }
+    @PostMapping("/addNote")
+    public List<String> addNote(@RequestParam("note") String note, HttpServletRequest request) {
+        //get the notes from request session
+        List<String> notes = (List<String>) request.getSession().getAttribute("NOTES_SESSION");
+        //check if notes is present in session or not
+        if (notes == null) {
+            notes = new ArrayList<>();
+            // if notes object is not present in session, set notes in the request session
+            request.getSession().setAttribute("NOTES_SESSION", notes);
+        }
+        notes.add(note);
+        request.getSession().setAttribute("NOTES_SESSION", notes);
+        return notes ;
     }
 
 }

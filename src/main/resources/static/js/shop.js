@@ -1,3 +1,4 @@
+         cartCount();
 function postRecord(id){
     console.log("btn clicked1");
 
@@ -15,9 +16,9 @@ function postRecord(id){
     url: '/addToCart/'+dataId,
     success:
         function( response ){
-            // console.log(response);
+             console.log(response);
             cartCount();
-            cartCountmobile();
+
         }
     });
 };
@@ -28,26 +29,75 @@ function cartCount(){
     $.ajax({
     type: 'get',
     url: '/getCart',
-    dataType: 'json',
+
     success:
-        function( data ){
-            var count=0;
-            $.each(data, function(index, element) {
-                // console.log(element);
-                qty = element.quantity;
-                count+=qty;
-            });
-            // console.log(count);
-            // if(count==0){
-            //     $("span #counter").hide();
-            // }else{
-            //     $("#counter").text(count);
-            // }
-            // $("#tec_cart").html('<span class="cart-basket d-flex align-items-center justify-content-center" id="counter">'+'</span>');
-            $("#counter").text(count);
+        function( response ){
+            var count=response;
+          console.log(response);
+          $("#counter").text(count);
         }
     });
 };
+
+function fetchRecord(){
+    console.log("fetch record");
+
+    $.ajax({
+    type: 'get',
+    url: '/fetchCart',
+    dataType: 'json',
+    success:
+        function( data ){
+
+            var t_data="";
+            var total=0;
+            var count=0;
+            var item_id=[];
+            $("#modal_table tbody").html("");
+            $.each(data, function(index, element) {
+                // console.log(element.id);
+                var imag=element.image;
+               var link='product/'+element.image;
+            //  console.log(link);
+                t_data=t_data+
+                '<tr id="t_data">'+
+                    '<td>'+'<img src="'+link+'" style="height:60px; width:60px;">'+ '</td>'+
+                    '<td>'+element.product+'</td>'+
+                    '<td>'+
+                        '<div class="row">'+
+                            '<a id="qty_btn" type="button" onclick=reduceByOne('+element.id+')>-</a>'+
+                                '&nbsp;&nbsp;'+element.quantity+'&nbsp;&nbsp;'+
+                            '<a id="qty_btn" onclick=addByOne('+element.id+')>+</a>'+
+                        '</div>'+
+                    '</td>'+
+                    '<td>'+'Ksh '+element.price+'</td>'+
+                    '<td>'+'Ksh '+element.price  * element.quantity+'</td>'+
+                    '<td>'+'<a id="remove_item" type="button" onclick=removeItem('+element.id+')>Remove Item</a> '+'</td>'+
+                '</tr>';
+                qty = element.quantity;
+                price = element.price;
+                prod = qty*price;
+                total +=prod;
+                qty = element.quantity;
+                count+=qty;
+                item_id=element.id;
+                // console.log(item_id);
+            });
+
+            $("#total_price").html("Total Amount: Ksh "+total);
+            $("#modal_table tbody").append(t_data);
+            $("#total_price_header").html('<h4>'+"Your Total Amount is : Ksh "+total+'</h4>');
+            $("#form_amount").html('<input type="hidden" name="total" id="amount"  placeholder="" value='+total+' >');
+            $("#item_count").html('<input type="hidden" name="item_count" id="item_count"  placeholder="" value='+count+' >');
+            cartCount();
+            cartCountmobile();
+        }
+    });
+};
+
+
+
+
 function checkoutcart(){
     console.log("fetch record");
 
@@ -100,62 +150,6 @@ function checkoutcart(){
 
 
 
-
-function fetchRecord(){
-    console.log("fetch record");
-
-    $.ajax({
-    type: 'get',
-    url: '/getCart',
-    dataType: 'json',
-    success:
-        function( data ){
-
-            var t_data="";
-            var total=0;
-            var count=0;
-            var item_id=[];
-            $("#modal_table tbody").html("");
-            $.each(data, function(index, element) {
-                // console.log(element.id);
-                var imag=element.image;
-               var link='product/'+element.image;
-            //  console.log(link);
-                t_data=t_data+
-                '<tr id="t_data">'+
-                    '<td>'+'<img src="'+link+'" style="height:60px; width:60px;">'+ '</td>'+
-                    '<td>'+element.product+'</td>'+
-                    '<td>'+
-                        '<div class="row">'+
-                            '<a id="qty_btn" type="button" onclick=reduceByOne('+element.id+')>-</a>'+
-                                '&nbsp;&nbsp;'+element.quantity+'&nbsp;&nbsp;'+
-                            '<a id="qty_btn" onclick=addByOne('+element.id+')>+</a>'+
-                        '</div>'+
-                    '</td>'+
-                    '<td>'+'Ksh '+element.price+'</td>'+
-                    '<td>'+'Ksh '+element.price  * element.quantity+'</td>'+
-                    '<td>'+'<a id="remove_item" type="button" onclick=removeItem('+element.id+')>Remove Item</a> '+'</td>'+
-                '</tr>';
-                qty = element.quantity;
-                price = element.price;
-                prod = qty*price;
-                total +=prod;
-                qty = element.quantity;
-                count+=qty;
-                item_id=element.id;
-                // console.log(item_id);
-            });
-
-            $("#total_price").html("Total Amount: Ksh "+total);
-            $("#modal_table tbody").append(t_data);
-            $("#total_price_header").html('<h4>'+"Your Total Amount is : Ksh "+total+'</h4>');
-            $("#form_amount").html('<input type="hidden" name="total" id="amount"  placeholder="" value='+total+' >');
-            $("#item_count").html('<input type="hidden" name="item_count" id="item_count"  placeholder="" value='+count+' >');
-            cartCount();
-            cartCountmobile();
-        }
-    });
-};
 
 
 
@@ -297,62 +291,9 @@ function removeItem(id){
 };
 
 
-function cartCount(){
-    console.log("count record");
-
-    $.ajax({
-    type: 'get',
-    url: '/getCart',
-    dataType: 'json',
-    success:
-        function( data ){
-            var count=0;
-            $.each(data, function(index, element) {
-                // console.log(element);
-                qty = element.quantity;
-                count+=qty;
-            });
-            // console.log(count);
-            // if(count==0){
-            //     $("span #counter").hide();
-            // }else{
-            //     $("#counter").text(count);
-            // }
-            // $("#tec_cart").html('<span class="cart-basket d-flex align-items-center justify-content-center" id="counter">'+'</span>');
-            $("#counter").text(count);
-        }
-    });
-};
 
 
 
-
-function cartCountmobile(){
-    console.log("count record");
-
-    $.ajax({
-    type: 'get',
-    url: '/getCart',
-    dataType: 'json',
-    success:
-        function( data ){
-            var count=0;
-            $.each(data, function(index, element) {
-                // console.log(element);
-                qty = element.quantity;
-                count+=qty;
-            });
-            // console.log(count);
-            // if(count==0){
-            //     $("span #counter").hide();
-            // }else{
-            //     $("#counter").text(count);
-            // }
-            // $("#tec_cart").html('<span class="cart-basket d-flex align-items-center justify-content-center" id="counter">'+'</span>');
-            $("#countermobile").text(count);
-        }
-    });
-};
 
 
 function checkout_table(){

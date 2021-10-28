@@ -4,6 +4,7 @@ import javax.persistence.*;
 
 @Entity
 public class Products {
+
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     @Column(name = "id", nullable = false)
@@ -23,6 +24,8 @@ public class Products {
     @Column(name = "is_hidden", nullable = false)
     private String is_hidden;
     private  Integer dicount;
+
+
 
 
 
@@ -95,9 +98,6 @@ public class Products {
     public void setDicount(int price, int original_price) {
         this.dicount = ((price - original_price) / original_price) * 100;
     }
-
-
-
 
 
 
