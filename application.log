@@ -1,0 +1,177 @@
+2021-11-03 08:57:32.931  INFO 119238 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-11-03 08:57:32.978  INFO 119238 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-11-03 08:57:32.997  INFO 119238 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 19 ms
+2021-11-03 09:01:31.352  INFO 119238 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-11-03 09:01:31.377  INFO 119238 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-11-03 09:01:31.408  INFO 119238 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-11-03 09:02:08.402  INFO 156677 --- [Test worker] c.eshop.jamiske.JamiskeApplicationTests  : Starting JamiskeApplicationTests using Java 16.0.1 on dct15-HP-Compaq-8200-Elite-CMT-PC with PID 156677 (started by dct-15 in /home/dct-15/IdeaProjects/jamiske)
+2021-11-03 09:02:08.432  INFO 156677 --- [Test worker] c.eshop.jamiske.JamiskeApplicationTests  : No active profile set, falling back to default profiles: default
+2021-11-03 09:02:09.865  INFO 156677 --- [Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-11-03 09:02:09.934  INFO 156677 --- [Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 58 ms. Found 3 JPA repository interfaces.
+2021-11-03 09:02:10.835  INFO 156677 --- [Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-11-03 09:02:10.899  INFO 156677 --- [Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.32.Final
+2021-11-03 09:02:11.040  INFO 156677 --- [Test worker] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-11-03 09:02:11.248  INFO 156677 --- [Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-11-03 09:02:12.056  INFO 156677 --- [Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-11-03 09:02:12.073  INFO 156677 --- [Test worker] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2021-11-03 09:02:13.000  INFO 156677 --- [Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-11-03 09:02:13.008  INFO 156677 --- [Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-11-03 09:02:13.877  WARN 156677 --- [Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-11-03 09:02:14.387  INFO 156677 --- [Test worker] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-11-03 09:02:14.841  INFO 156677 --- [Test worker] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2021-11-03 09:02:15.235  INFO 156677 --- [Test worker] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2021-11-03 09:02:15.252  INFO 156677 --- [Test worker] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2021-11-03 09:02:15.289  INFO 156677 --- [Test worker] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2021-11-03 09:02:15.539  INFO 156677 --- [Test worker] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getAllUsersUsingGET_1
+2021-11-03 09:02:15.544  INFO 156677 --- [Test worker] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getUserUsingGET_1
+2021-11-03 09:02:15.690  INFO 156677 --- [Test worker] s.a.ScheduledAnnotationBeanPostProcessor : No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
+2021-11-03 09:02:15.699  INFO 156677 --- [Test worker] c.eshop.jamiske.JamiskeApplicationTests  : Started JamiskeApplicationTests in 7.746 seconds (JVM running for 9.203)
+2021-11-03 09:02:15.983  INFO 156677 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-11-03 09:02:15.986  INFO 156677 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-11-03 09:02:16.010  INFO 156677 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-11-03 09:02:20.527  INFO 156729 --- [main] com.eshop.jamiske.JamiskeApplication     : Starting JamiskeApplication using Java 11.0.11 on dct15-HP-Compaq-8200-Elite-CMT-PC with PID 156729 (/home/dct-15/IdeaProjects/jamiske/build/libs/jamiske-0.0.1-SNAPSHOT.jar started by dct-15 in /home/dct-15/IdeaProjects/jamiske)
+2021-11-03 09:02:20.532  INFO 156729 --- [main] com.eshop.jamiske.JamiskeApplication     : No active profile set, falling back to default profiles: default
+2021-11-03 09:02:22.163  INFO 156729 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-11-03 09:02:22.243  INFO 156729 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 62 ms. Found 3 JPA repository interfaces.
+2021-11-03 09:02:24.897  INFO 156729 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-11-03 09:02:27.140  INFO 156729 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-11-03 09:02:27.140  INFO 156729 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.53]
+2021-11-03 09:02:28.536  INFO 156729 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-11-03 09:02:28.537  INFO 156729 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 7646 ms
+2021-11-03 09:02:29.609  INFO 156729 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-11-03 09:02:29.696  INFO 156729 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.32.Final
+2021-11-03 09:02:29.968  INFO 156729 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-11-03 09:02:30.872  INFO 156729 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-11-03 09:02:34.324  INFO 156729 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-11-03 09:02:34.353  INFO 156729 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2021-11-03 09:02:35.422  INFO 156729 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-11-03 09:02:35.435  INFO 156729 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-11-03 09:02:36.329  WARN 156729 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-11-03 09:02:36.551  INFO 156729 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-11-03 09:02:36.831  INFO 156729 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2021-11-03 09:02:37.074  INFO 156729 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-11-03 09:02:37.076  INFO 156729 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2021-11-03 09:02:37.104  INFO 156729 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2021-11-03 09:02:37.146  INFO 156729 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2021-11-03 09:02:37.392  INFO 156729 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getAllUsersUsingGET_1
+2021-11-03 09:02:37.402  INFO 156729 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getUserUsingGET_1
+2021-11-03 09:02:37.640  INFO 156729 --- [main] s.a.ScheduledAnnotationBeanPostProcessor : No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
+2021-11-03 09:02:37.687  INFO 156729 --- [main] com.eshop.jamiske.JamiskeApplication     : Started JamiskeApplication in 18.535 seconds (JVM running for 20.815)
+2021-11-03 09:03:03.866  INFO 156729 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-11-03 09:03:03.871  INFO 156729 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-11-03 09:03:03.872  INFO 156729 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-11-03 09:07:45.295  INFO 156729 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-11-03 09:07:45.316  INFO 156729 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-11-03 09:07:45.373  INFO 156729 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-11-03 09:07:59.668  INFO 157171 --- [Test worker] c.eshop.jamiske.JamiskeApplicationTests  : Starting JamiskeApplicationTests using Java 16.0.1 on dct15-HP-Compaq-8200-Elite-CMT-PC with PID 157171 (started by dct-15 in /home/dct-15/IdeaProjects/jamiske)
+2021-11-03 09:07:59.687  INFO 157171 --- [Test worker] c.eshop.jamiske.JamiskeApplicationTests  : No active profile set, falling back to default profiles: default
+2021-11-03 09:08:01.028  INFO 157171 --- [Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-11-03 09:08:01.109  INFO 157171 --- [Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 72 ms. Found 3 JPA repository interfaces.
+2021-11-03 09:08:01.890  INFO 157171 --- [Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-11-03 09:08:01.939  INFO 157171 --- [Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.32.Final
+2021-11-03 09:08:02.064  INFO 157171 --- [Test worker] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-11-03 09:08:02.196  INFO 157171 --- [Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-11-03 09:08:02.969  INFO 157171 --- [Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-11-03 09:08:02.985  INFO 157171 --- [Test worker] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2021-11-03 09:08:03.857  INFO 157171 --- [Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-11-03 09:08:03.865  INFO 157171 --- [Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-11-03 09:08:04.821  WARN 157171 --- [Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-11-03 09:08:05.261  INFO 157171 --- [Test worker] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-11-03 09:08:05.747  INFO 157171 --- [Test worker] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2021-11-03 09:08:06.157  INFO 157171 --- [Test worker] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2021-11-03 09:08:06.176  INFO 157171 --- [Test worker] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2021-11-03 09:08:06.219  INFO 157171 --- [Test worker] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2021-11-03 09:08:06.471  INFO 157171 --- [Test worker] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getAllUsersUsingGET_1
+2021-11-03 09:08:06.968  INFO 157171 --- [Test worker] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getUserUsingGET_1
+2021-11-03 09:08:07.183  INFO 157171 --- [Test worker] s.a.ScheduledAnnotationBeanPostProcessor : No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
+2021-11-03 09:08:07.191  INFO 157171 --- [Test worker] c.eshop.jamiske.JamiskeApplicationTests  : Started JamiskeApplicationTests in 7.985 seconds (JVM running for 10.832)
+2021-11-03 09:08:08.297  INFO 157171 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-11-03 09:08:08.300  INFO 157171 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-11-03 09:08:08.311  INFO 157171 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-11-03 09:08:13.115  INFO 157226 --- [main] com.eshop.jamiske.JamiskeApplication     : Starting JamiskeApplication using Java 11.0.11 on dct15-HP-Compaq-8200-Elite-CMT-PC with PID 157226 (/home/dct-15/IdeaProjects/jamiske/build/libs/jamiske-0.0.1-SNAPSHOT.jar started by dct-15 in /home/dct-15/IdeaProjects/jamiske)
+2021-11-03 09:08:13.120  INFO 157226 --- [main] com.eshop.jamiske.JamiskeApplication     : No active profile set, falling back to default profiles: default
+2021-11-03 09:08:15.023  INFO 157226 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-11-03 09:08:15.120  INFO 157226 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 78 ms. Found 3 JPA repository interfaces.
+2021-11-03 09:08:16.410  INFO 157226 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-11-03 09:08:16.476  INFO 157226 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-11-03 09:08:16.479  INFO 157226 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.53]
+2021-11-03 09:08:16.612  INFO 157226 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-11-03 09:08:16.613  INFO 157226 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3270 ms
+2021-11-03 09:08:17.019  INFO 157226 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-11-03 09:08:17.094  INFO 157226 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.32.Final
+2021-11-03 09:08:17.325  INFO 157226 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-11-03 09:08:17.546  INFO 157226 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-11-03 09:08:18.422  INFO 157226 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-11-03 09:08:18.444  INFO 157226 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2021-11-03 09:08:19.501  INFO 157226 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-11-03 09:08:19.514  INFO 157226 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-11-03 09:08:20.907  WARN 157226 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-11-03 09:08:21.246  INFO 157226 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-11-03 09:08:21.613  INFO 157226 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2021-11-03 09:08:21.890  INFO 157226 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-11-03 09:08:21.892  INFO 157226 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2021-11-03 09:08:21.950  INFO 157226 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2021-11-03 09:08:21.987  INFO 157226 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2021-11-03 09:08:22.234  INFO 157226 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getAllUsersUsingGET_1
+2021-11-03 09:08:22.239  INFO 157226 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getUserUsingGET_1
+2021-11-03 09:08:22.422  INFO 157226 --- [main] s.a.ScheduledAnnotationBeanPostProcessor : No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
+2021-11-03 09:08:22.437  INFO 157226 --- [main] com.eshop.jamiske.JamiskeApplication     : Started JamiskeApplication in 10.544 seconds (JVM running for 12.092)
+2021-11-03 09:09:24.104  INFO 157226 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-11-03 09:09:24.105  INFO 157226 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-11-03 09:09:24.107  INFO 157226 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2021-11-03 09:11:15.711  INFO 157226 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-11-03 09:11:15.732  INFO 157226 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-11-03 09:11:15.784  INFO 157226 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-11-03 09:11:26.888  INFO 157714 --- [Test worker] c.eshop.jamiske.JamiskeApplicationTests  : Starting JamiskeApplicationTests using Java 16.0.1 on dct15-HP-Compaq-8200-Elite-CMT-PC with PID 157714 (started by dct-15 in /home/dct-15/IdeaProjects/jamiske)
+2021-11-03 09:11:26.893  INFO 157714 --- [Test worker] c.eshop.jamiske.JamiskeApplicationTests  : No active profile set, falling back to default profiles: default
+2021-11-03 09:11:28.618  INFO 157714 --- [Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-11-03 09:11:28.675  INFO 157714 --- [Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 48 ms. Found 3 JPA repository interfaces.
+2021-11-03 09:11:29.499  INFO 157714 --- [Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-11-03 09:11:29.547  INFO 157714 --- [Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.32.Final
+2021-11-03 09:11:29.678  INFO 157714 --- [Test worker] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-11-03 09:11:29.791  INFO 157714 --- [Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-11-03 09:11:30.460  INFO 157714 --- [Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-11-03 09:11:30.483  INFO 157714 --- [Test worker] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2021-11-03 09:11:31.516  INFO 157714 --- [Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-11-03 09:11:31.523  INFO 157714 --- [Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-11-03 09:11:32.498  WARN 157714 --- [Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-11-03 09:11:32.974  INFO 157714 --- [Test worker] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-11-03 09:11:33.398  INFO 157714 --- [Test worker] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2021-11-03 09:11:33.762  INFO 157714 --- [Test worker] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2021-11-03 09:11:33.780  INFO 157714 --- [Test worker] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2021-11-03 09:11:33.806  INFO 157714 --- [Test worker] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2021-11-03 09:11:34.141  INFO 157714 --- [Test worker] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getAllUsersUsingGET_1
+2021-11-03 09:11:34.152  INFO 157714 --- [Test worker] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getUserUsingGET_1
+2021-11-03 09:11:34.347  INFO 157714 --- [Test worker] s.a.ScheduledAnnotationBeanPostProcessor : No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
+2021-11-03 09:11:34.354  INFO 157714 --- [Test worker] c.eshop.jamiske.JamiskeApplicationTests  : Started JamiskeApplicationTests in 7.941 seconds (JVM running for 9.273)
+2021-11-03 09:11:34.617  INFO 157714 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-11-03 09:11:34.620  INFO 157714 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-11-03 09:11:34.634  INFO 157714 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-11-03 09:11:37.096  INFO 157766 --- [main] com.eshop.jamiske.JamiskeApplication     : Starting JamiskeApplication using Java 11.0.11 on dct15-HP-Compaq-8200-Elite-CMT-PC with PID 157766 (/home/dct-15/IdeaProjects/jamiske/build/libs/jamiske-0.0.1-SNAPSHOT.jar started by dct-15 in /home/dct-15/IdeaProjects/jamiske)
+2021-11-03 09:11:37.099  INFO 157766 --- [main] com.eshop.jamiske.JamiskeApplication     : No active profile set, falling back to default profiles: default
+2021-11-03 09:11:39.193  INFO 157766 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-11-03 09:11:39.317  INFO 157766 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 106 ms. Found 3 JPA repository interfaces.
+2021-11-03 09:11:40.677  INFO 157766 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-11-03 09:11:40.708  INFO 157766 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-11-03 09:11:40.710  INFO 157766 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.53]
+2021-11-03 09:11:40.874  INFO 157766 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-11-03 09:11:40.878  INFO 157766 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3612 ms
+2021-11-03 09:11:41.381  INFO 157766 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-11-03 09:11:41.558  INFO 157766 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.32.Final
+2021-11-03 09:11:42.002  INFO 157766 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-11-03 09:11:42.381  INFO 157766 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-11-03 09:11:43.446  INFO 157766 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-11-03 09:11:43.493  INFO 157766 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2021-11-03 09:11:45.531  INFO 157766 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-11-03 09:11:45.540  INFO 157766 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-11-03 09:11:46.490  WARN 157766 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-11-03 09:11:46.780  INFO 157766 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-11-03 09:11:47.209  INFO 157766 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2021-11-03 09:11:47.791  INFO 157766 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-11-03 09:11:47.792  INFO 157766 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2021-11-03 09:11:47.820  INFO 157766 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2021-11-03 09:11:47.878  INFO 157766 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2021-11-03 09:11:48.219  INFO 157766 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getAllUsersUsingGET_1
+2021-11-03 09:11:48.225  INFO 157766 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getUserUsingGET_1
+2021-11-03 09:11:48.446  INFO 157766 --- [main] s.a.ScheduledAnnotationBeanPostProcessor : No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
+2021-11-03 09:11:48.474  INFO 157766 --- [main] com.eshop.jamiske.JamiskeApplication     : Started JamiskeApplication in 12.477 seconds (JVM running for 13.276)
