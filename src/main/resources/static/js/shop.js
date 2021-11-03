@@ -29,7 +29,7 @@ function cartCount(){
     $.ajax({
     type: 'get',
     url: '/getCart',
-
+dataType: 'json',
     success:
         function( response ){
             var count=response;
@@ -56,23 +56,26 @@ function fetchRecord(){
             $("#modal_table tbody").html("");
             $.each(data, function(index, element) {
                 // console.log(element.id);
-                var imag=element.image;
-               var link='product/'+element.image;
+
+               var link='/images/products/'+element.image;
             //  console.log(link);
                 t_data=t_data+
                 '<tr id="t_data">'+
                     '<td>'+'<img src="'+link+'" style="height:60px; width:60px;">'+ '</td>'+
-                    '<td>'+element.product+'</td>'+
+                    '<td>'+element.name+'</td>'+
                     '<td>'+
                         '<div class="row">'+
-                            '<a id="qty_btn" type="button" onclick=reduceByOne('+element.id+')>-</a>'+
+
+
+                            '<a id="qty_btn" th:if="'+element.quantity+' > 1" type="button" onclick=reduceByOne('+element.id+')  >-</a>'+
+
                                 '&nbsp;&nbsp;'+element.quantity+'&nbsp;&nbsp;'+
-                            '<a id="qty_btn" onclick=addByOne('+element.id+')>+</a>'+
+                            '<a id="qty_btn" onclick=addByOne('+element.id+') >+</a>'+
                         '</div>'+
                     '</td>'+
                     '<td>'+'Ksh '+element.price+'</td>'+
                     '<td>'+'Ksh '+element.price  * element.quantity+'</td>'+
-                    '<td>'+'<a id="remove_item" type="button" onclick=removeItem('+element.id+')>Remove Item</a> '+'</td>'+
+                    '<td>'+'<a id="remove_item" type="button" onclick=removeItem('+element.id+') >Remove Item</a> '+'</td>'+
                 '</tr>';
                 qty = element.quantity;
                 price = element.price;
@@ -90,7 +93,7 @@ function fetchRecord(){
             $("#form_amount").html('<input type="hidden" name="total" id="amount"  placeholder="" value='+total+' >');
             $("#item_count").html('<input type="hidden" name="item_count" id="item_count"  placeholder="" value='+count+' >');
             cartCount();
-            cartCountmobile();
+
         }
     });
 };

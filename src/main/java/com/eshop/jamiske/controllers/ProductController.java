@@ -1,6 +1,7 @@
 package com.eshop.jamiske.controllers;
 
 
+import com.eshop.jamiske.model.Cart;
 import com.eshop.jamiske.model.Products;
 import com.eshop.jamiske.repositories.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,10 +9,12 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.Collection;
 import java.util.List;
 import com.eshop.jamiske.services.ProductService;
+
 @RestController
 
 public class ProductController {
@@ -19,119 +22,63 @@ public class ProductController {
     private ProductRepository productRepository;
     @Autowired
     ProductService productService;
+// search engine
     @RequestMapping(value = "/search", method = RequestMethod.POST)
-    public @ResponseBody
-    Iterable<Products> search (@RequestParam String categories
-            , @RequestParam String search_text) {
-        // @ResponseBody means the returned String is the response, not a view name
-        // @RequestParam means it is a parameter from the GET or POST request
+    public Collection<Products> search (@RequestParam String categories, @RequestParam String search_text)
+    {
 
-        if (categories == "all"){
-
-            List<Products> productsList= (List<Products>) productRepository.findByName(search_text);
-            return productsList;
-        }
-        else {
-            List<Products> productsList= (List<Products>) productRepository.findByName(search_text);
-            return productsList;
-        }
-
-
+            return productService.getProductByName(search_text, categories);
     }
-
-
+// add cart
     @GetMapping(path = "/addToCart/{id}")
     public @ResponseBody
-    List<Integer> getUp(@PathVariable final Integer id, HttpServletRequest request) {
-        // This returns a JSON or XML with the users
+    List<Cart> getUp1(@PathVariable final Integer id, HttpSession request) {
 
+         return productService.addcart(id, request);
+     }
 
+  // quantity
+    @GetMapping(path="/addByOne/{id}")
+    public List<Cart> quantity(@PathVariable final Integer id, HttpSession request) {
 
-        List <Integer> carts = (List<Integer>) request.getSession().getAttribute("cart");
-        //check if notes is present in session or not
-        if (carts == null) {
-            carts = new ArrayList<>();
-            // if notes object is not present in session, set notes in the request session
-            request.getSession().setAttribute("cart", carts);
-        }
-        else {
-            if (carts.contains(id))
-            {
-
-
-            }
-            else {
-
-                carts.add(id);
-                request.getSession().setAttribute("cart", carts);
-
-
-            }
-
-        }
-        return carts;
+        return productService.addquantity(id, request);
     }
+    // minus
+    @GetMapping(path="/reduceByOne/{id}")
+    public List<Cart> quantityRemove(@PathVariable final Integer id, HttpSession request) {
 
-    @GetMapping(path = "/addToCart==/{id}")
-    public @ResponseBody
-    List<Products> getUpp(@PathVariable final Integer id, HttpServletRequest request) {
-        // This returns a JSON or XML with the users
-
-
-
-        List <Products> carts = (List<Products>) request.getSession().getAttribute("cartss");
-        Products productsList= (Products) productRepository.findById(id);
-
-       carts.add(productsList);
-
-        return carts;
+        return productService.subquantity(id, request);
     }
+    //remove cart
+    @GetMapping(path="/remove/{id}")
+    public List<Cart> CartRemove(@PathVariable final Integer id, HttpSession request) {
 
 
+        return productService.remmovecart(id, request);
+    }
+    //get cart
     @GetMapping(path="/getCart")
-    public @ResponseBody
-    Integer getcart(HttpServletRequest request) {
-      //  List<Integer> carts = (List<Integer>)
-       // Integer count = 0;
-        List <Integer> carts = (List<Integer>) request.getSession().getAttribute("cart");
-     int  count = carts.size();
+    public Integer getcart(HttpSession request) {
 
-        return count;
+        return productService.getcart(request);
+
+
+
     }
+    //fetch cart
     @GetMapping(path="/fetchCart")
     public @ResponseBody
-    List<Products> fetchcart(HttpServletRequest request) {
+    List<Cart> fetchcart(HttpSession request) {
 
-int count = 0;
-        List <Integer> carts = (List<Integer>) request.getSession().getAttribute("cart");
-        List<Products> temp = new ArrayList<>(Arrays.asList());
-        for (Integer cart : carts) {
-     count++;
-            Products productsList= (Products) productRepository.findById(cart);
-
-            temp.add(productsList);
-        }
+        List<Cart> list = (List<Cart>) request.getAttribute("cart10");
 
 
 
 
 
-        return  temp;
+        return  list;
     }
-    @PostMapping("/addNote")
-    public List<String> addNote(@RequestParam("note") String note, HttpServletRequest request) {
-        //get the notes from request session
-        List<String> notes = (List<String>) request.getSession().getAttribute("NOTES_SESSION");
-        //check if notes is present in session or not
-        if (notes == null) {
-            notes = new ArrayList<>();
-            // if notes object is not present in session, set notes in the request session
-            request.getSession().setAttribute("NOTES_SESSION", notes);
-        }
-        notes.add(note);
-        request.getSession().setAttribute("NOTES_SESSION", notes);
-        return notes ;
-    }
+
     @RequestMapping(value = "/products")
     public ResponseEntity<Object> getProduct() {
         return new ResponseEntity<>(productService.getProducts(), HttpStatus.OK);

@@ -3,6 +3,7 @@ package com.eshop.jamiske.model;
 import javax.persistence.*;
 
 @Entity
+@Table(schema = "e-shop")
 public class Products {
 
     @Id
