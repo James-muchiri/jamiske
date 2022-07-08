@@ -51,9 +51,10 @@ public class JamisControler {
 
         }
 
-
+         long productscount = productsList.stream().count();
         modelAndView.addObject("cat", categoriesList);
         modelAndView.addObject("products", productsList);
+        modelAndView.addObject("productscount", productscount);
 
         modelAndView.addObject("productsbycat", catts);
         return modelAndView;
@@ -84,6 +85,6 @@ public class JamisControler {
 @GetMapping(path = "/find/{id}")
 public @ResponseBody Iterable<Admi> getUser(@PathVariable final Integer id) {
     // This returns a JSON or XML with the users
-    return dept.findById(id);
+    return (Iterable<Admi>) dept.findById(id);
 }
 }

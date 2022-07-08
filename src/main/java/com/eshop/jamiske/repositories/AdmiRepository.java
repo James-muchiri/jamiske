@@ -15,5 +15,8 @@ public interface AdmiRepository extends CrudRepository<Admi, Long> {
 
 
 
-    Iterable<Admi> findById(Integer id);
+
+    Admi findById(Integer id);
+    Admi findByEmail(String email);
+    Admi findByName(String name);
 }
